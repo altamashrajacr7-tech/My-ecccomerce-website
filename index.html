@@ -3,166 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NAVA | Modern Fashion Store</title>
+
     <link rel="stylesheet" href="style.css">
-    
-    <title>VÉLORA | Modern Clothing</title>
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <h1>VÉLORA</h1>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav">
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">New Arrivals</a>
-            <a href="#">Contact</a>
-        </nav>
+            <a href="#" class="logo">NAVA<span>.</span></a>
 
-        <div>
-            <button>🔍</button>
-            <button>🛒 Cart</button>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="searchBtn" class="icon-btn">⌕</button>
+
+                <button id="wishlistBtn" class="icon-btn">
+                    ♡
+                    <span id="wishlistCount">0</span>
+                </button>
+
+                <button id="cartBtn" class="cart-btn">
+                    🛒
+                    <span id="cartCount">0</span>
+                </button>
+
+                <button id="menuBtn" class="menu-btn">☰</button>
+            </div>
+
+        </div>
+
+        <!-- SEARCH BOX -->
+        <div id="searchBox" class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+            >
         </div>
     </header>
 
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <main>
 
-        <section>
-            <h2>STYLE THAT<br>DEFINES YOU.</h2>
+        <section id="home" class="hero">
 
-            <p>
-                Discover modern clothing designed for your everyday style.
-            </p>
+            <div class="container hero-content">
 
-            <button>SHOP NOW →</button>
-        </section>
+                <div class="hero-text">
 
+                    <p class="small-title">NEW COLLECTION 2026</p>
 
-        <!-- Featured Categories -->
-        <section>
-            <h2>Shop By Category</h2>
+                    <h1>
+                        Style that
+                        <span>speaks.</span>
+                    </h1>
 
-            <div>
-                <article>
-                    <h3>Men</h3>
-                    <p>Explore Men's Collection</p>
-                    <button>SHOP MEN</button>
-                </article>
+                    <p class="hero-description">
+                        Discover modern fashion designed for your everyday
+                        style. Simple, elegant and made for you.
+                    </p>
 
-                <article>
-                    <h3>Women</h3>
-                    <p>Explore Women's Collection</p>
-                    <button>SHOP WOMEN</button>
-                </article>
+                    <a href="#shop" class="primary-btn">
+                        Shop Collection →
+                    </a>
 
-                <article>
-                    <h3>Accessories</h3>
-                    <p>Complete Your Look</p>
-                    <button>SHOP ACCESSORIES</button>
-                </article>
-            </div>
-        </section>
+                </div>
 
-
-        <!-- New Arrivals -->
-        <section>
-            <h2>New Arrivals</h2>
-            <p>Fresh styles. New season.</p>
-
-            <div>
-
-                <article>
-                    <img src="https://via.placeholder.com/300" alt="Oversized T-Shirt">
-                    <h3>Essential Oversized T-Shirt</h3>
-                    <p>₹999</p>
-                    <button>ADD TO CART</button>
-                </article>
-
-                <article>
-                    <img src="https://via.placeholder.com/300" alt="Classic Hoodie">
-                    <h3>Classic Everyday Hoodie</h3>
-                    <p>₹1,799</p>
-                    <button>ADD TO CART</button>
-                </article>
-
-                <article>
-                    <img src="https://via.placeholder.com/300" alt="Relaxed Shirt">
-                    <h3>Relaxed Fit Shirt</h3>
-                    <p>₹1,299</p>
-                    <button>ADD TO CART</button>
-                </article>
-
-                <article>
-                    <img src="https://via.placeholder.com/300" alt="Cargo Pants">
-                    <h3>Urban Cargo Pants</h3>
-                    <p>₹1,599</p>
-                    <button>ADD TO CART</button>
-                </article>
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80"
+                        alt="Fashion collection"
+                    >
+                </div>
 
             </div>
+
         </section>
 
 
-        <!-- About Brand -->
-        <section>
-            <h2>Why VÉLORA?</h2>
+        <!-- CATEGORIES -->
+        <section id="categories" class="categories section">
 
-            <p>
-                We believe clothing is more than what you wear.
-                It's a way to express who you are.
-            </p>
+            <div class="container">
 
-            <p>
-                VÉLORA combines comfort, quality and modern design
-                to create clothing made for everyday life.
-            </p>
+                <div class="section-heading">
+                    <p>EXPLORE</p>
+                    <h2>Shop by category</h2>
+                </div>
+
+                <div class="category-grid">
+
+                    <button class="category-card" data-category="Sarees">
+                        <span>🥻</span>
+                        <h3>Sarees</h3>
+                        <p>Elegant traditional styles</p>
+                    </button>
+
+                    <button class="category-card" data-category="Kurtis">
+                        <span>👗</span>
+                        <h3>Kurtis</h3>
+                        <p>Comfortable everyday fashion</p>
+                    </button>
+
+                    <button class="category-card" data-category="Bedsheets">
+                        <span>🛏️</span>
+                        <h3>Bedsheets</h3>
+                        <p>Beautiful home essentials</p>
+                    </button>
+
+                    <button class="category-card" data-category="New">
+                        <span>✨</span>
+                        <h3>New Arrivals</h3>
+                        <p>Fresh styles just arrived</p>
+                    </button>
+
+                </div>
+
+            </div>
+
         </section>
 
 
-        <!-- Newsletter -->
-        <section>
-            <h2>JOIN THE VÉLORA COMMUNITY</h2>
+        <!-- PRODUCTS -->
+        <section id="shop" class="products section">
 
-            <p>
-                Get updates about new collections and special offers.
-            </p>
+            <div class="container">
 
-            <form>
-                <input 
-                    type="email" 
-                    placeholder="Enter your email"
-                    required
-                >
+                <div class="products-header">
 
-                <button type="submit">SUBSCRIBE</button>
-            </form>
+                    <div class="section-heading">
+                        <p>OUR STORE</p>
+                        <h2>Featured products</h2>
+                    </div>
+
+                    <select id="sortProducts">
+                        <option value="default">Sort by</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                        <option value="name">Name</option>
+                    </select>
+
+                </div>
+
+                <div id="productGrid" class="product-grid"></div>
+
+                <p id="noProducts" class="no-products">
+                    No products found.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROMO -->
+        <section class="promo">
+
+            <div class="container promo-content">
+
+                <div>
+                    <p>LIMITED OFFER</p>
+
+                    <h2>
+                        Get 10% OFF your first order.
+                    </h2>
+
+                    <span>
+                        Use code <strong>NAVA10</strong> at checkout.
+                    </span>
+                </div>
+
+                <a href="#shop" class="secondary-btn">
+                    Shop Now
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="about section">
+
+            <div class="container about-content">
+
+                <div>
+                    <p class="small-title">ABOUT NAVA</p>
+
+                    <h2>
+                        Fashion made
+                        <span>simple.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    NAVA is a modern clothing store focused on bringing
+                    beautiful designs, comfortable products and a simple
+                    shopping experience to everyone.
+                </p>
+
+            </div>
+
         </section>
 
     </main>
 
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
 
-        <h2>VÉLORA</h2>
+        <div class="container footer-grid">
 
-        <p>Modern clothing. Made for you.</p>
+            <div>
+                <a href="#" class="logo">NAVA<span>.</span></a>
 
-        <div>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">YouTube</a>
+                <p>
+                    Modern fashion for everyday life.
+                </p>
+            </div>
+
+            <div>
+                <h3>Shop</h3>
+                <a href="#shop">All Products</a>
+                <a href="#categories">Categories</a>
+                <a href="#shop">New Arrivals</a>
+            </div>
+
+            <div>
+                <h3>Help</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+            </div>
+
         </div>
 
-        <p>© 2026 VÉLORA. All rights reserved.</p>
+        <div class="copyright">
+            © 2026 NAVA. All rights reserved.
+        </div>
 
     </footer>
-<script src="script.js"></script>
+
+
+    <!-- CART SIDEBAR -->
+    <div id="cartOverlay" class="overlay"></div>
+
+    <aside id="cartSidebar" class="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button id="closeCart" class="close-btn">
+                ×
+            </button>
+
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">Rs. 0</strong>
+            </div>
+
+            <button id="checkoutBtn" class="primary-btn full">
+                Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="modal">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="close-btn">
+                ×
+            </button>
+
+            <h2>Complete your order</h2>
+
+            <p>
+                Enter your details and we'll prepare your order.
+            </p>
+
+            <form id="checkoutForm">
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Your name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="Phone number"
+                    required
+                >
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="Delivery address"
+                    rows="4"
+                    required
+                ></textarea>
+
+                <button type="submit" class="primary-btn full">
+                    Order on WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
 </body>
-  </html>
+                </html>  
