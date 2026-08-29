@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Weston Wears - modern clothing, sarees, kurtis, dresses and more." />
+  <title>Weston Wears | Modern Clothing Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement-bar">Free delivery on eligible orders • Cash on Delivery available</div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="Weston Wears home">
+        <span class="brand-main">WESTON</span>
+        <span class="brand-sub">WEARS</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <button class="nav-link js-open-search" type="button">Search</button>
+        <button class="nav-link js-open-account" type="button">Account</button>
+        <button class="nav-link cart-trigger" type="button" aria-label="Open shopping cart">
+          Cart <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="nav-link" id="loginBtn" type="button">Login</button>
+        <button class="nav-link hidden" id="logoutBtn" type="button">Logout</button>
+      </nav>
+
+      <div class="navbar-actions">
+        <button class="icon-btn js-open-search" type="button" aria-label="Search products" title="Search products">⌕</button>
+        <button class="icon-btn cart-trigger" type="button" aria-label="Open shopping cart" title="Shopping cart">Bag <span class="cart-count" id="cartCountMobile">0</span></button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <button class="mobile-nav-link js-open-search" type="button">Search</button>
+      <button class="mobile-nav-link js-open-account" type="button">Account</button>
+      <button class="mobile-nav-link cart-trigger" type="button">Cart <span class="cart-count">0</span></button>
+      <button class="mobile-nav-link" id="mobileLoginBtn" type="button">Login</button>
+      <button class="mobile-nav-link hidden" id="mobileLogoutBtn" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">WESTON WEARS • EVERYDAY ELEGANCE</p>
+          <h1>Style that feels <em>distinctly yours.</em></h1>
+          <p class="hero-text">Discover refined Indian and contemporary fashion designed for celebrations, everyday confidence, and everything in between.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#shop">Shop Now</a>
+            <a class="btn btn-secondary" href="#categories">Explore Collection</a>
+          </div>
+          <div class="hero-points" aria-label="Store highlights">
+            <span>Curated styles</span><span>Quality-first fabrics</span><span>COD available</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Fashion collection visual">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-card hero-card-back"></div>
+          <div class="hero-card hero-card-main">
+            <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=85" alt="Elegant traditional outfit" />
+            <div class="hero-badge">NEW<br /><strong>EDIT</strong></div>
+          </div>
+          <div class="hero-float-card">
+            <span class="mini-label">THE WESTON EDIT</span>
+            <strong>Timeless pieces<br />for every mood.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div><span>01</span><strong>Curated Collection</strong><small>Modern + traditional styles</small></div>
+        <div><span>02</span><strong>Easy Shopping</strong><small>Simple front-end checkout</small></div>
+        <div><span>03</span><strong>Customer First</strong><small>Support when you need it</small></div>
+      </div>
+    </section>
+
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">SHOP BY MOOD</p>
+          <h2>Find your signature style.</h2>
+          <p>Browse our hand-picked categories and discover pieces made for your wardrobe.</p>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="shop">
+      <div class="container">
+        <div class="shop-toolbar">
+          <div class="section-heading">
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2>Featured pieces</h2>
+            <p id="productResultText">Showing all products</p>
+          </div>
+          <div class="shop-tools">
+            <button class="filter-chip active" data-filter="all" type="button">All</button>
+            <button class="filter-chip" data-filter="Sarees" type="button">Sarees</button>
+            <button class="filter-chip" data-filter="Kurtis" type="button">Kurtis</button>
+            <button class="filter-chip" data-filter="Dresses" type="button">Dresses</button>
+          </div>
+        </div>
+
+        <div class="search-inline" id="inlineSearch">
+          <div class="search-wrap">
+            <span aria-hidden="true">⌕</span>
+            <input id="productSearch" type="search" placeholder="Search sarees, kurtis, dresses..." aria-label="Search products" />
+            <button id="clearSearch" type="button" aria-label="Clear search">×</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+        <div class="empty-state hidden" id="noProducts">
+          <div class="empty-icon">⌕</div>
+          <h3>No products found</h3>
+          <p>Try another search term or choose a different category.</p>
+          <button class="btn btn-secondary" id="resetFilters" type="button">Show all products</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial section">
+      <div class="container editorial-grid">
+        <div class="editorial-image"><img src="https://images.unsplash.com/photo-1583391733981-849840f7a1bd?auto=format&fit=crop&w=1200&q=85" alt="Fashion detail from the Weston Wears collection" /></div>
+        <div class="editorial-copy">
+          <p class="eyebrow">OUR PHILOSOPHY</p>
+          <h2>Less noise. More style.</h2>
+          <p>Weston Wears brings together expressive silhouettes, versatile fabrics, and thoughtfully selected colors so your outfit can feel special without feeling complicated.</p>
+          <a href="#contact" class="text-link">Talk to our team <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h2>We’re here to help.</h2>
+          <p class="contact-intro">Have a question about a product, an order, or finding the right style? Send us a message.</p>
+          <div class="contact-details">
+            <a href="tel:9804223154"><span>Phone</span><strong>9804223154</strong></a>
+            <a href="mailto:Rastrabank%20bank%20chowk%2017,%20Pokhara,%20Nepal"><span>Email / Contact</span><strong>Rastrabank bank chowk 17, Pokhara, Nepal</strong></a>
+            <div><span>Location</span><strong>Pokhara, Nepal</strong></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field-row">
+            <div class="field"><label for="contactName">Name</label><input id="contactName" type="text" required /></div>
+            <div class="field"><label for="contactEmail">Email</label><input id="contactEmail" type="email" required /></div>
+          </div>
+          <div class="field"><label for="contactMessage">Message</label><textarea id="contactMessage" rows="5" required></textarea></div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-message" id="contactSuccess" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand footer-brand-logo" href="#home"><span class="brand-main">WESTON</span><span class="brand-sub">WEARS</span></a>
+        <p>A modern clothing destination for refined everyday style and memorable occasions.</p>
+        <a href="tel:9804223154" class="footer-phone">9804223154</a>
+      </div>
+
+      <div class="footer-col"><h3>Quick links</h3><a href="#home">Home</a><a href="#shop">Shop</a><a href="#categories">Categories</a><button class="footer-link js-open-account">Account</button><button class="footer-link cart-trigger">Cart</button></div>
+      <div class="footer-col"><h3>Customer service</h3><a href="#contact">Contact Us</a><button class="footer-link js-open-policy" data-policy="return">Return Policy</button><button class="footer-link js-open-policy" data-policy="shipping">Shipping Policy</button><button class="footer-link js-open-policy" data-policy="faq">FAQ</button></div>
+      <div class="footer-col"><h3>Legal</h3><button class="footer-link js-open-policy" data-policy="terms">Terms &amp; Conditions</button><button class="footer-link js-open-policy" data-policy="privacy">Privacy Policy</button><button class="footer-link js-open-policy" data-policy="refund">Refund / Return Policy</button></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Weston Wears. All rights reserved.</span><span>Front-end demo store • No real payments processed</span></div>
+  </footer>
+
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <aside class="side-panel" id="cartPanel" aria-hidden="true" aria-label="Shopping cart">
+    <div class="panel-header"><div><span class="eyebrow">YOUR BAG</span><h2>Shopping cart</h2></div><button class="close-btn" data-close="cartPanel" type="button" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty hidden" id="cartEmpty"><div class="empty-icon">Bag</div><h3>Your bag is empty</h3><p>Add something you love and it will appear here.</p><a href="#shop" class="btn btn-secondary" data-close="cartPanel">Browse collection</a></div>
+    <div class="cart-summary" id="cartSummary"><div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><small>Delivery is calculated at checkout.</small><button class="btn btn-primary full" id="checkoutCartBtn" type="button">Checkout</button></div>
+  </aside>
+
+  <div class="modal" id="searchModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="searchTitle">
+    <div class="modal-card modal-search"><button class="close-btn" data-close="searchModal" type="button" aria-label="Close search">×</button><p class="eyebrow">FIND YOUR STYLE</p><h2 id="searchTitle">What are you looking for?</h2><div class="search-modal-wrap"><span>⌕</span><input id="modalSearchInput" type="search" placeholder="Try “saree” or “kurti”" /></div><div class="search-tags"><button type="button" data-search-tag="Saree">Saree</button><button type="button" data-search-tag="Kurti">Kurti</button><button type="button" data-search-tag="Dress">Dress</button><button type="button" data-search-tag="Suit">Suit</button></div></div>
+  </div>
+
+  <div class="modal" id="accountModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="accountTitle">
+    <div class="modal-card account-card"><button class="close-btn" data-close="accountModal" type="button" aria-label="Close account">×</button><p class="eyebrow">MY WESTON</p><h2 id="accountTitle">Your account</h2><div id="accountLoggedOut"><p class="modal-copy">This demo account system uses only your browser’s local storage. It is not secure authentication.</p><form id="loginForm" novalidate><div class="field"><label for="loginName">Name</label><input id="loginName" type="text" required /></div><div class="field"><label for="loginEmail">Email</label><input id="loginEmail" type="email" required /></div><button class="btn btn-primary full" type="submit">Login to demo account</button></form></div><div id="accountLoggedIn" class="hidden"><div class="account-avatar" id="accountAvatar">W</div><h3 id="accountWelcome">Welcome back</h3><p class="modal-copy">You are logged in to this demo account on this browser.</p><button class="btn btn-secondary full" id="accountLogoutBtn" type="button">Logout</button></div></div>
+  </div>
+
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="checkoutTitle">
+    <div class="modal-card checkout-card"><button class="close-btn" data-close="checkoutModal" type="button" aria-label="Close checkout">×</button><div id="checkoutView"><p class="eyebrow">CHECKOUT</p><h2 id="checkoutTitle">Complete your order</h2><div class="checkout-grid"><div class="checkout-product" id="checkoutProduct"></div><div class="checkout-summary"><h3>Order summary</h3><div class="summary-line"><span>Subtotal</span><strong id="checkoutSubtotal">₹0</strong></div><div class="summary-line"><span>Delivery</span><strong id="checkoutDelivery">₹0</strong></div><div class="summary-line grand"><span>Total</span><strong id="checkoutTotal">₹0</strong></div><div class="payment-box"><span>Payment method</span><strong>Cash on Delivery</strong><small>Demo option — no real payment is processed.</small></div></div></div><form id="checkoutForm" novalidate><div class="form-section-title">Customer details</div><div class="field-row"><div class="field"><label for="customerName">Full name</label><input id="customerName" type="text" required /></div><div class="field"><label for="customerPhone">Phone number</label><input id="customerPhone" type="tel" inputmode="tel" required /></div></div><div class="field-row"><div class="field"><label for="customerEmail">Email</label><input id="customerEmail" type="email" required /></div><div class="field"><label for="customerCity">City</label><input id="customerCity" type="text" required /></div></div><div class="field"><label for="customerAddress">Address</label><textarea id="customerAddress" rows="3" required></textarea></div><div class="field"><label for="customerPostal">Postal code</label><input id="customerPostal" type="text" required /></div><button class="btn btn-primary full" type="submit">Place Order</button><p class="form-message" id="checkoutError" role="alert"></p></form></div><div id="checkoutSuccessView" class="checkout-success hidden"><div class="success-mark">✓</div><p class="eyebrow">ORDER CONFIRMED</p><h2>Thank you for shopping with Weston Wears.</h2><p>Your demo order has been created successfully.</p><div class="order-id-box">Demo order ID <strong id="orderId">WW-000000</strong></div><button class="btn btn-primary" data-close="checkoutModal" type="button">Continue shopping</button></div></div>
+  </div>
+
+  <div class="modal" id="policyModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="policyTitle"><div class="modal-card policy-card"><button class="close-btn" data-close="policyModal" type="button" aria-label="Close policy">×</button><p class="eyebrow">WESTON WEARS</p><h2 id="policyTitle">Policy</h2><div id="policyContent" class="policy-content"></div></div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon">✓</span><span id="toastText">Added to cart</span></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
